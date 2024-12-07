@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { itemReadSingle } from "../../../utils/itemReadSingle";
-
+import { itemReadSingle } from "@/app/utils/itemReadSingle";
+import { JSX } from "react";
 
 // todo: Is correct the context type?
 const ReadSingleItem = async ({
@@ -31,7 +31,5 @@ const ReadSingleItem = async ({
     </div>
   );
 };
-
-
 
 export default ReadSingleItem;

@@ -2,6 +2,9 @@ import Link from "next/link";
 import connectDB from "./utils/database";
 import { ItemModel } from "./utils/schemaModels";
 import Image from "next/image";
+import { JSX } from "react";
+
+export const dynamic = "force-dynamic"; // Force dynamic rendering.
 
 const itemReadAll = async () => {
   await connectDB();
@@ -9,7 +12,7 @@ const itemReadAll = async () => {
   return items;
 };
 
-const ReadAllItems = async () => {
+const ReadAllItems: React.FC<JSX.Element> = async () => {
   const items = await itemReadAll();
   return (
     <div className="grid-container-in">

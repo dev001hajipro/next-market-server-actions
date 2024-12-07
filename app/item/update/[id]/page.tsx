@@ -1,6 +1,7 @@
 import { itemUpdate } from "@/app/actions/itemUpdate";
 import { getToken } from "@/app/utils/auth";
-import { itemReadSingle } from "../../../utils/itemReadSingle";
+import { itemReadSingle } from "@/app/utils/itemReadSingle";
+import { JSX } from "react";
 
 const UpdateItem = async ({
   params,

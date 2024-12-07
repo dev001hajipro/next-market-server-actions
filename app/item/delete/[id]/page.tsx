@@ -1,13 +1,9 @@
 import { itemDelete } from "@/app/actions/itemDelete";
 import { getToken } from "@/app/utils/auth";
 import Image from "next/image";
-import { itemReadSingle } from "../../../utils/itemReadSingle";
+import { itemReadSingle } from "@/app/utils/itemReadSingle";
 
-const DeleteItem = async ({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}): Promise<JSX.Element> => {
+const DeleteItem = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
   const item = await itemReadSingle(id);
   const itemDeleteWithId = itemDelete.bind(null, id);
