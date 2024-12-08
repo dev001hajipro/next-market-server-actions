@@ -28,7 +28,7 @@ export const userLogin = async (
       if (user.password === userData.password) {
         // JWT
         const secretKey = new TextEncoder().encode(
-          process.env.NEXT_PUBLIC_SECRET
+          process.env.XXX_SECRET
         );
         const payload = { email: user.email };
         const token = await new SignJWT(payload)
