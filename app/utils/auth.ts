@@ -8,9 +8,7 @@ export const getToken = async () => {
 
   if (!token) return null;
 
-  const secretKey = new TextEncoder().encode(
-    process.env.NEXT_PUBLIC_JWT_SECRET
-  );
+  const secretKey = new TextEncoder().encode(process.env.NEXT_PUBLIC_SECRET);
   const { payload } = await jwtVerify(token, secretKey);
   return payload as { email: string };
 };

@@ -11,7 +11,7 @@ export async function middleware(request: NextRequest) {
 
   // check to valid token.
   try {
-    const secretKey = new TextEncoder().encode(process.env.NEXT_PUBLIC_JWT_SECRET);
+    const secretKey = new TextEncoder().encode(process.env.NEXT_PUBLIC_SECRET);
     await jwtVerify(token, secretKey);
     console.log("valid token.");
   } catch {

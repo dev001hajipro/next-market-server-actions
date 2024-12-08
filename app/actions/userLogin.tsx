@@ -28,7 +28,7 @@ export const userLogin = async (
       if (user.password === userData.password) {
         // JWT
         const secretKey = new TextEncoder().encode(
-          process.env.NEXT_PUBLIC_JWT_SECRET
+          process.env.NEXT_PUBLIC_SECRET
         );
         const payload = { email: user.email };
         const token = await new SignJWT(payload)
@@ -39,7 +39,6 @@ export const userLogin = async (
         const cookieStore = await cookies();
         cookieStore.set("token", token, config);
         //return { message: "login successfully" };
-
       } else {
         return { message: "login failure" };
       }
